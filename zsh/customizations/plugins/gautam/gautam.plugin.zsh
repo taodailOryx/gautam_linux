@@ -117,12 +117,11 @@ function dcipaddr() {
 alias bat='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
 alias cdo='cd ${PLAY_DIR}/ocean'
 
-alias gc='git commit --verbose -S'
-alias gca='git commit --amend --no-edit -S'
-alias gcae='git commit --amend --verbose -S'
-alias gcf='git commit -S --fixup'
+alias gca='git commit --amend --no-edit'
+alias gcae='git commit --amend --verbose'
+alias gcf='git commit --fixup'
 alias gcp='custom-git-cherry-pick'
-alias gct='git commit -m "tmp" -S'
+alias gct='git commit -m "tmp"'
 
 alias gd='git difftool --no-prompt'
 alias gd_cl='PAGER= git diff'
