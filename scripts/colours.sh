@@ -35,8 +35,18 @@ do
         rs) TEXT="Reset to \"normal\" color";;
         mh) TEXT="Multi-Hardlink";;
         ca) TEXT="File with capability";;
+        "*.tar") TEXT="Archive";;
+        "*.jpg") TEXT="Image";;
+        "*.mp3") TEXT="Audio";;
         *) TEXT="${TYPE} (TODO: get description)";;
     esac
 
-    printf "Type: %-10s Colour: %-10s \e[${COLOUR}m${TEXT}\e[0m\n" "${TYPE}" "${COLOUR}"
+    # If you want to see only explicitly defined filetypes (case statement)
+    if [[ ${TEXT} != *"TODO"* ]]; then
+        printf "Type: %-10s Colour: %-10s \e[${COLOUR}m${TEXT}\e[0m\n" "${TYPE}" "${COLOUR}"
+    fi
+
+    # If you want to see all filetypes
+    # printf "Type: %-10s Colour: %-10s \e[${COLOUR}m${TEXT}\e[0m\n" "${TYPE}" "${COLOUR}"
+
 done
